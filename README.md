@@ -1,27 +1,60 @@
-# Forms
+# Angular Template-Driven Forms
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+> A hands-on project from the **Udemy course by Maximilian Schwarzmüller** — *Angular - The Complete Guide*.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📋 About This Project
 
-## Code scaffolding
+This project demonstrates the use of **template-driven forms** in Angular — one of the two primary approaches to handling user input and form validation in Angular applications.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The main focus is a **Login Form** component that showcases how to bind form controls declaratively in the template using Angular's `FormsModule`, apply built-in validators, track control state, and persist user data between sessions via `localStorage`.
 
-## Build
+---
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🚀 Features
 
-## Running unit tests
+- **Template-driven form setup** with `NgForm` and two-way binding via `ngModel`
+- **Built-in validators** — `required`, `email`, `minlength` applied directly in HTML
+- **Real-time validation feedback** — error messages shown only after the field is touched and dirty
+- **Form submission handling** — reads values from `NgForm`, validates before processing, and resets after submission
+- **LocalStorage persistence** — email field value is saved automatically with a `500ms` debounce and restored on the next visit using `afterNextRender`
+- **Automatic subscription cleanup** via Angular's `DestroyRef`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
 
-## Running end-to-end tests
+## 🛠️ Tech Stack
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+| Technology | Purpose |
+|---|---|
+| Angular (Standalone Components) | UI framework |
+| `FormsModule` / `NgForm` | Template-driven form handling |
+| `viewChild` | Access to the form reference |
+| `afterNextRender` | Lifecycle hook for DOM-safe initialization |
+| `DestroyRef` | Clean unsubscription on component destroy |
+| RxJS `debounceTime` | Throttle localStorage writes |
 
-## Further help
+---
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## 🎓 Course Reference
+
+This project is part of the course:
+
+**[Angular - The Complete Guide (2024 Edition)](https://www.udemy.com/course/the-complete-guide-to-angular-2/)**
+*by Maximilian Schwarzmüller on Udemy*
+
+Section covered: **Forms — Template-Driven Approach**
+
+---
+
+## ▶️ Getting Started
+
+```bash
+# Install dependencies
+npm install
+
+# Start the development server
+ng serve
+```
+
+Then open [http://localhost:4200](http://localhost:4200) in your browser.
